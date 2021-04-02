@@ -12,6 +12,10 @@
  cursor:crosshair;
 }
 
+p {
+  font-size: 0.7em;
+}
+
 img {
   opacity: 0.5;
 }
@@ -23,12 +27,10 @@ ul {
 
 img:hover {
   opacity: 1.0;
-  height: auto;
-  max-width: 100%;
 }
 
 #bovenbalk h1{
-  font-size: 8em;
+  font-size: 4em;
   font-family: 'Comfortaa', cursive;
 }
 
@@ -37,7 +39,7 @@ img:hover {
   background-image: url("https://cdn.discordapp.com/attachments/787054262248144897/822033569551482910/background_maybe.png");
 
   /* Set a specific height */
-  min-height: 500px;
+  min-height: inherit;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -48,22 +50,21 @@ img:hover {
 
 #container {
   display: grid;
-  grid-template-columns: 2fr 4fr 3fr;
-  grid-template-rows: 6fr 400px 3.5fr 3.5fr 3.5fr 1.5fr;
-  grid-template-areas: "hoofd hoofd hoofd"
-                       "between between between"
-                       "menu midden1 midden1"
-                       "menu midden2 midden2"
-                       "midden3 midden3 fotos"
-                       "footer footer footer";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 400px 80px 400px 500px 250px 200px 100px;
+  grid-template-areas: "hoofd hoofd"
+                       "between between"
+                       "midden1 midden1"
+                       "menu midden2"
+                       "midden3 midden3"
+                       "fotos fotos"
+                       "footer footer";
 
 }
 
 #bovenbalk {
-  background-color: rgba(69, 162, 158, 0);
   color: #66FCF1;
   grid-area: hoofd;
-  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +74,8 @@ img:hover {
   background-color: rgb(69, 162, 158);
   display:flex;
   grid-area: between;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  max-width: 100%;
 }
 
 #linkerkolom {
@@ -82,42 +84,44 @@ img:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 }
 
 #centrum1 {
   background-color: #0B0C10;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
   grid-area: midden1;
   align-items: center;
 }
 
 .paragraph {
-  padding: 50px;
-  color: #C5C6C7
+  color: #C5C6C7;
+  padding: 10%
 }
 
 .pin {
   color: #C5C6C7;
   display: flex;
   padding: 10%;
+  font-size: 1.5em;
 }
 
 .head {
-  padding: 50px;
+  padding: 5%;
   color: #45A29E
 }
 
 .head2 {
-  padding: 50px;
-  padding-bottom: 10px;
+  padding-left: 20%;
 }
 
 #centrum2 {
   background-color: #1F2833;
   display: flex;
   grid-area: midden2;
+  align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
 }
@@ -131,12 +135,12 @@ img:hover {
 }
 
 #S3 p {
-  padding: 20px;
+  padding: 2%;
 }
 
 #M3 {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #C5C6C7;
   display: flex;
   justify-content: space-evenly;
@@ -151,12 +155,12 @@ img:hover {
 #rechterkolom {
   background-color: #3B8A86;
   grid-area: fotos;
-  padding: 10px;
+  padding: 4%;
 }
 
 #Contact {
   width: 100%;
-  height: 50%
+  height: 50%;
 }
 
 #footer {
@@ -165,13 +169,30 @@ img:hover {
   color: #C5C6C7;
 }
 
-
-@media only screen and (min-width: 320px) {
-    /* stijlregels voor browserschermen > 320px en < 720px */
-}
-
 @media only screen and (min-width: 720px) {
     /* stijlregels voor browserschermen > 720px en < 1024px */
+    #container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 400px 175px 400px 500px 250px 200px 100px;
+      grid-template-areas: "hoofd hoofd"
+                           "between between"
+                           "midden1 midden1"
+                           "menu midden2"
+                           "midden3 midden3"
+                           "fotos fotos"
+                           "footer footer";
+
+    }
+    .head2 {
+      padding-left: 0px;
+    }
+    p {
+      font-size: 1em;
+    }
+    .paragraph {
+      padding: 5%;
+    }
 }
 @media only screen and (min-width:1024px) {
     /* stijlregels voor browserschermen ≥ 1024px */
@@ -184,6 +205,7 @@ img:hover {
 
     img {
       opacity: 0.5;
+      max-width: 100%
     }
 
     ul {
@@ -219,7 +241,7 @@ img:hover {
     #container {
       display: grid;
       grid-template-columns: 2fr 4fr 3fr;
-      grid-template-rows: 6fr 400px 3.5fr 3.5fr 3.5fr 1.5fr;
+      grid-template-rows: 6fr 300px 3.5fr 3.5fr 3.5fr 1.5fr;
       grid-template-areas: "hoofd hoofd hoofd"
                            "between between between"
                            "menu midden1 midden1"
@@ -246,12 +268,17 @@ img:hover {
       justify-content: space-around;
     }
 
+    #annoying {
+      visibility: visible;
+    }
+
     #linkerkolom {
       background-color: #3B8A86;
       grid-area: menu;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-evenly;
     }
 
     #centrum1 {
@@ -314,10 +341,6 @@ img:hover {
       flex-direction: column;
     }
 
-    #M3:hover {
-      background-color: rgb(69, 162, 158);
-    }
-
     #rechterkolom {
       background-color: #3B8A86;
       grid-area: fotos;
@@ -335,4 +358,18 @@ img:hover {
       color: #C5C6C7;
     }
 
+}
+@media only screen and (min-width:1200px) {
+  #container {
+    display: grid;
+    grid-template-columns: 2fr 4fr 3fr;
+    grid-template-rows: 6fr 400px 3.5fr 3.5fr 3.5fr 1.5fr;
+    grid-template-areas: "hoofd hoofd hoofd"
+                         "between between between"
+                         "menu midden1 midden1"
+                         "menu midden2 midden2"
+                         "midden3 midden3 fotos"
+                         "footer footer footer";
+
+  }
 }
